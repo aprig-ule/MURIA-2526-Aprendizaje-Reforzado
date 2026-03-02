@@ -128,9 +128,12 @@ Desde tensorboard (una vez lanzado corre en *http://localhost:6006/*) podemos ob
 Una vez entrenados, es posible evaluar los modelos contra el simulador ajustando la cantidad de iteraciones:
 
 ```bash
-ixi run eval --config greenhouse_env_config.yaml \
+pixi run eval --config greenhouse_env_config.yaml \
 --model <path_to_model>.pt --num-episodes 10
 ```
+
+Es posible modificar los parámetros relativos al entrenamiento en ~/rl_deliberation/pyrobosim_ros_gym/config/greenhouse_env_config.yaml
+Este archivo yaml contiene a su vez la configuración de los algoritmos de entrenamiento PPO, DQN, SAC y A2C.
 
 ### Ejercicio 4: Entrenamiento en entornos más complejos
 
