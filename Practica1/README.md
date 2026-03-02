@@ -125,7 +125,37 @@ Desde tensorboard (una vez lanzado corre en *http://localhost:6006/*) podemos ob
 
 ![alt text](image-5.png)
 
+Una vez entrenados, es posible evaluar los modelos contra el simulador ajustando la cantidad de iteraciones:
+
+```bash
+ixi run eval --config greenhouse_env_config.yaml \
+--model <path_to_model>.pt --num-episodes 10
+```
+
 ### Ejercicio 4: Entrenamiento en entornos más complejos
 
+Cambio de entorno:
 
+``` bash
+pixi run start_world --env GreenhouseRandom
+```
 
+``` bash
+pixi run policy_node --model <path_to_your_model>.pt \
+--config greenhouse_env_config.yaml
+```
+
+Abrimos un shell interactivo
+```bash
+pixi shell
+```
+
+Desde el shell lanzamos un objetivo de acción para ejecutar la policy.
+```bash
+ros2 action send_goal /execute_policy \
+rl_interfaces/ExecutePolicy {}
+```
+
+La acción lanza la policy, que se ejecuta en el entorno aleatorizado donde la planta "malvada" no se encuentra en un lugar conocido y finaliza de manera satisfactoria. Esto nos indica que el entrenamiento a dado fruto y nuestro robot es capaz de regar correctamente con un alto porcentaje de acierto en entornos desconocidos.
+
+![alt text](image-6.png)
