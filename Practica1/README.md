@@ -1,8 +1,6 @@
-# MURIA-2526-Aprendizaje-Reforzado
-Aprendizaje reforzado - Asignatura del máster en IA y robótica de la ULE
+# Práctica 1: Reinforcement Learning for Deliberation
 
-Primero, set pixi env:
-
+Primero, hace falta establecer el entorno de pixi:
 
 ```bash
 export PATH="$HOME/.pixi/bin:$PATH"
