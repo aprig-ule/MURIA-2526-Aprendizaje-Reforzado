@@ -411,8 +411,6 @@ def torso_orientation_reward(robot, sigma=0.05):
     return torch.exp(-error / (2 * sigma ** 2))
 ```
 
-## Resultados
-
 
 ---
 
