@@ -3,17 +3,10 @@ import time
 import mujoco.viewer
 import mujoco
 import numpy as np
-
+from legged_gym import LEGGED_GYM_ROOT_DIR
 import torch
 import yaml
 
-import os
-
-os.environ["MUJOCO_GL"] = "egl"
-os.environ["EGL_DEVICE_ID"] = "0"
-os.environ["DRI_PRIME"] = "1"
-
-from legged_gym import LEGGED_GYM_ROOT_DIR
 
 def get_gravity_orientation(quaternion):
     qw = quaternion[0]
